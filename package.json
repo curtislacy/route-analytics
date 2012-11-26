@@ -1,0 +1,37 @@
+{
+  "name": "route-analytics",
+  "version": "0.0.1",
+  "description": "Unobtrusive analytic logging for Connect",
+  "author": {
+    "name": "Curtis Lacy",
+    "email": "curtis.lacy@ldengine.com"
+  },
+  "homepage": "https://github.com/LDEngine/route-analytics",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/LDEngine/route-analytics.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LDEngine/route-analytics/issues"
+  },
+  "dependencies": {
+    "winston": "0.6.x"
+  },
+  "devDependencies": {
+  },
+  "engines": {
+    "node": ">= 0.4.0"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "keywords": [
+    "express",
+    "connect",
+    "logging",
+    "analytics"
+  ]
+}
