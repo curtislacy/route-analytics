@@ -8,7 +8,9 @@ Logger.prototype.logRequest = function( req ) {
 	else
 		var user = 'none';
 
-	this.winston.info( ( Date.now() ) + ', ROUTE-ANALYTICS, request, ' + url + ', ' + user );
+	var now = Date.now();
+	req.startTimeMillis = now.valueOf();
+	this.winston.info( now + ', ROUTE-ANALYTICS, request, ' + url + ', ' + user );
 }
 Logger.prototype.logResponse = function( req, res ) {
 	var url = req.url;
@@ -17,7 +19,10 @@ Logger.prototype.logResponse = function( req, res ) {
 	else
 		var user = 'none';
 
-	this.winston.info( ( Date.now() ) + ', ROUTE-ANALYTICS, response, ' + url + ', ' + user );
+	var now = Date.now();
+	this.winston.info( now + ', ROUTE-ANALYTICS, response, ' + url + ', ' + user );
+	if( req.startTimeMillis )
+		this.winston.info( now + ', ROUTE-ANALYTICS, duration, ' + ( now.valueOf() - req.startTimeMillis ) + ' ms, ' + url + ', ' + user );
 }
 
 module.exports = exports = function( config ) {
