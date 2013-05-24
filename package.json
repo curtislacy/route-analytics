@@ -1,6 +1,6 @@
 {
   "name": "route-analytics",
-  "version": "0.0.1",
+  "version": "0.0.1a",
   "description": "Unobtrusive analytic logging for Connect",
   "author": {
     "name": "Curtis Lacy",

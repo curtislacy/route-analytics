@@ -8,7 +8,7 @@ Logger.prototype.logRequest = function( req ) {
 	else
 		var user = 'none';
 
-	this.winston.info( ( Date.now() ) + ', ROUTE-ANALYTICS, request, ' + url + ', ' + user );
+	this.winston.info( ( new Date() ) + ', ROUTE-ANALYTICS, request, ' + url + ', ' + user );
 }
 Logger.prototype.logResponse = function( req, res ) {
 	var url = req.url;
@@ -16,8 +16,7 @@ Logger.prototype.logResponse = function( req, res ) {
 		var user = req.user.identifier;
 	else
 		var user = 'none';
-
-	this.winston.info( ( Date.now() ) + ', ROUTE-ANALYTICS, response, ' + url + ', ' + user );
+	this.winston.info( ( new Date() ) + ', ROUTE-ANALYTICS, response, ' + url + ', ' + user + ', ' + res.statusCode );
 }
 
 module.exports = exports = function( config ) {
